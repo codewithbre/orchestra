@@ -12,7 +12,7 @@ Three things stay true across every project canon is applied to:
 
 1. **AI executes. Humans decide.** Task decomposition, architecture, and scope are human responsibilities. Agents implement within defined bounds.
 2. **Every unit of work must be verifiable.** A task that cannot be confirmed complete in one pass is not a valid task.
-3. **Nothing proceeds without a task document. Nothing merges without a PR.** The structure is the product.
+3. **Nothing proceeds without a task document. Nothing merges without PR that proves the intent was verifed in the outcome.** The structure is the product.
 
 See [`docs/philosophy.md`](docs/philosophy.md) for the full argument.
 
