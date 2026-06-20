@@ -81,7 +81,7 @@ orchestra/
 │   ├── philosophy.md      Why constraints enable AI
 │   ├── workflow.md        The full skill chain with worked example
 │   └── architecture.md    Current sequential and future multi-agent models
-├── skills/                Six skill definitions — copy into any project
+├── skills/                Seven skill definitions — copy into any project
 ├── templates/             CLAUDE.md and IMPLEMENTATION.md starting points
 └── packages/
     ├── fugue/             Build agent

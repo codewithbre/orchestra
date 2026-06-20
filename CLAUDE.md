@@ -1,10 +1,10 @@
-# CLAUDE.md - Canon
+# CLAUDE.md - Orchestra
 
 ## What this repo is
 
-Canon is a multi-agent coding workflow system. This repo documents the philosophy, defines the skill chain, and provides templates for adopting the workflow on any project.
+Orchestra is a monorepo of AI coding agents built on the Task Integrity philosophy. It contains the shared skill definitions, docs, and templates that all agents use, plus the agent packages themselves (`packages/fugue`, `packages/coda`).
 
-This CLAUDE.md is for agents contributing to canon itself. If you are working on a project that has adopted canon, use that project's CLAUDE.md instead.
+This CLAUDE.md is for agents contributing to Orchestra itself. If you are working on a project that has adopted the Orchestra workflow, use that project's CLAUDE.md instead.
 
 ---
 
@@ -16,7 +16,7 @@ Every change to this repo must be a single functional change with:
 - A clear output (what the deliverable looks like)
 - A scope that can be verified in one pass
 
-**Do not accept vague tasks.** "Improve the docs" is not a task. "Add a worked example to docs/workflow.md showing a feature request traced through all six skills" is a task.
+**Do not accept vague tasks.** "Improve the docs" is not a task. "Add a worked example to docs/workflow.md showing a feature request traced through all seven skills" is a task.
 
 ---
 
@@ -32,6 +32,7 @@ Use this table to decide which skill to invoke before doing any work:
 | Generating IMPLEMENTATION.md from task docs | `/create-tracker` |
 | Implementing a scoped task | `/implement` |
 | Writing a PR description | `/create-pr` |
+| Posting a retrospective after all tasks merge | `/reprise` |
 
 **Never begin implementation without a task document.** If you don't have one, use `/write-task` first.
 
@@ -60,7 +61,7 @@ Scope: the file or directory affected (e.g. docs, skills, templates, readme)
 
 ## Do not
 
-- Do not add dependencies — this repo is documentation and skill definitions only. No package.json, no build step.
+- Do not add dependencies to the repo root — it has no package.json. Dependencies belong inside `packages/*`.
 - Do not modify skill files without updating both `skills/` and `~/.claude/commands/` — they must stay in sync.
 - Do not write placeholder content — every file either contains real content or does not exist.
 - Do not create architecture or design docs without a task document approving the scope first.

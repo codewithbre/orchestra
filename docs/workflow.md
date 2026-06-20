@@ -1,14 +1,14 @@
 # Workflow
 
-The canon workflow is a chain of six skills invoked in sequence. Each step has a defined input, a defined output, and a human checkpoint before the next step begins.
+The Orchestra workflow is a chain of seven skills invoked in sequence. Each step has a defined input, a defined output, and a human checkpoint before the next step begins.
 
 ```
-/breakdown → /write-task → /verify-task → /create-tracker → /implement → /create-pr
+/breakdown → /write-task → /verify-task → /create-tracker → /implement → /create-pr → /reprise
 ```
 
 ---
 
-## The six steps
+## The seven steps
 
 ### 1. /breakdown
 
@@ -72,6 +72,16 @@ The implement agent reads the task doc in full, restates what it will change and
 
 ---
 
+### 7. /reprise
+
+**Input:** The IMPLEMENTATION.md for the completed project (or directory path).
+**Output:** A GitHub issue labeled `reprise` containing: original goal, what was delivered, what worked well, shortcomings (specific to skill or step), suggested improvements (new skill / skill update / workflow change), and metrics if available from LangSmith.
+**Human checkpoint:** Read the issue. Use findings to improve the skill definitions or workflow for the next project.
+
+The reprise closes the feedback loop. Without it, shortcomings surface only in conversation and are forgotten. With it, they become a permanent record that improves the system over time.
+
+---
+
 ## Worked example
 
 **Feature request:** "Add a `getIntervalSemitones` function to the theory package."
@@ -99,7 +109,10 @@ Agent checks out branch `task-01-get-interval-semitones`, adds the function, exp
 **Step 6 - /create-pr:**
 Agent produces: `feat(theory): add getIntervalSemitones lookup function` with summary, file list (`intervals.ts`, `index.ts`), and verification steps. Human reviews, merges.
 
-Total time on task: one session. Total human decisions: approve breakdown, read task doc, review PR.
+**Step 7 - /reprise:**
+After all tasks are merged, agent reads IMPLEMENTATION.md, identifies the original goal vs what was delivered, surfaces shortcomings in the skill chain, suggests improvements, and posts everything as a GitHub issue labeled `reprise`. Human reviews the issue and uses it to improve the workflow for the next project.
+
+Total time on task: one session. Total human decisions: approve breakdown, read task doc, review PR, review reprise issue.
 
 ---
 

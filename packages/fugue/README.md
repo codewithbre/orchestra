@@ -6,17 +6,19 @@ Part of the [Orchestra](../../README.md) monorepo.
 
 ## What it does
 
-Fugue executes the canon skill chain:
+Fugue executes the Orchestra skill chain:
 
 ```
-/breakdown → /write-task → /verify-task → /create-tracker → /implement → /create-pr
+/breakdown → /write-task → /verify-task → /create-tracker → /implement → /create-pr → /reprise
 ```
+
+`/reprise` runs automatically at the end of every Fugue run — posting a GitHub issue with what was accomplished, what shortcomings were found, and what skill improvements are suggested.
 
 ## Two execution modes
 
 **Mode 1 — Claude Code (interactive):** Invoke skills manually in a Claude Code session. Human at the keyboard. Already works with the skill definitions in `orchestra/skills/`.
 
-**Mode 2 — Programmatic API (automated):** The `runtime/` TypeScript orchestrator calls the Claude API directly. Enables GitHub Actions triggering, parallel fan-out, and LangSmith observability.
+**Mode 2 — Programmatic API (automated):** The `runtime/` TypeScript orchestrator calls the Claude API directly. Enables GitHub Actions triggering, parallel fan-out, and LangSmith observability. Implementation in progress — 11 task docs written, see `.claude/tasks/fugue-runtime/IMPLEMENTATION.md`.
 
 ## Docs
 
