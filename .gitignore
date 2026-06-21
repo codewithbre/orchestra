@@ -1,5 +1,9 @@
-# Package source code — kept private, not published to the public repo
+# Package source code — kept private; docs, skills, and templates are public
 packages/
+
+# Claude Code local config
+.claude/settings.local.json
+.claude/settings.json
 
 # Dependencies
 node_modules/
