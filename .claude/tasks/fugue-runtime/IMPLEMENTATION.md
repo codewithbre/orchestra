@@ -106,7 +106,7 @@ Tasks must be completed in the order listed. Check a task off only when its PR i
 **What it does:** Creates `src/tools/breakdown.ts` and `src/types.ts`. `runBreakdown()` calls Claude with the breakdown skill and returns a typed `Task[]` via Zod structured output.
 **Depends on:** Tasks 02, 03
 
-- [ ] Task 04 complete (PR merged)
+- [x] Task 04 complete (PR merged) — PR #8, merged 2026-06-21
 
 ---
 
